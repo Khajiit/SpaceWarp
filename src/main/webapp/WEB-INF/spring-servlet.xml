@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+		 View resolvers configuration
+	-->
+
+    <bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+        <property name="templateLoaderPath" value="/views/freemarker/"/>
+    </bean>
+
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+        <property name="order" value="1"/>
+        <property name="cache" value="false"/>
+        <property name="prefix" value=""/>
+        <property name="suffix" value=".ftl"/>
+
+        <!-- if you want to use the Spring FreeMarker macros, set this property to true -->
+        <property name="exposeSpringMacroHelpers" value="true"/>
+
+    </bean>
+
+    <bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+        <property name="prefix" value="/WEB-INF/views/jsp/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+</beans>
