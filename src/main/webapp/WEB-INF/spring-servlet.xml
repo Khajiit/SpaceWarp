@@ -17,6 +17,8 @@
         <property name="prefix" value=""/>
         <property name="suffix" value=".ftl"/>
 
+        <property name="contentType" value="text/html;charset=UTF-8" />
+
         <!-- if you want to use the Spring FreeMarker macros, set this property to true -->
         <property name="exposeSpringMacroHelpers" value="true"/>
 
